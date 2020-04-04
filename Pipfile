@@ -7,7 +7,7 @@ verify_ssl = true
 ariadne_spike = {editable = true,extras = ["dev"],path = "."}
 
 [packages]
-ariadne_spike = {editable = true,path = "."}
+ariadne-spike = {path = "."}
 
 [requires]
 python_version = "3.6"

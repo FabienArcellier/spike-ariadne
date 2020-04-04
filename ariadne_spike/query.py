@@ -4,7 +4,7 @@ from typing import Any
 from ariadne import gql, make_executable_schema, QueryType, ObjectType
 from graphql import GraphQLSchema, GraphQLResolveInfo
 
-from ariadne_spike.domain.User import User
+from ariadne_spike.domain.user import User
 
 query = QueryType()
 user = ObjectType("User")

@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import click
+import os
 import uvicorn
 from ariadne.asgi import GraphQL
 
@@ -15,12 +16,14 @@ def cli():
 @click.command('webapp')
 def webapp():
     app = build_webapp()
-    uvicorn.run(app, debug=True)
+    port = int(os.getenv('PORT', 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 
 def build_webapp():
+
     schema = query.schema()
-    return GraphQL(schema, debug=True)
+    return GraphQL(schema)
 
 
 cli.add_command(webapp)
