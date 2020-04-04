@@ -19,6 +19,8 @@ make activate
 
 ```bash
 python -m ariadne_spike.cli webapp
+# or
+ariadne_spike webapp
 ```
 
 1.3) run the graphql query
