@@ -18,7 +18,8 @@ setup(
     install_requires = [
         'ariadne',
         'click',
-        'decorator'
+        'decorator',
+        'uvicorn'
     ],
     extras_require={
         'dev': [

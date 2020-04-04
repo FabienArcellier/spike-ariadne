@@ -1,27 +1,33 @@
-## blueprint-cli-multicommands-python
+## implement a graphql service with ariadne
 
 [![Build Status](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python)
 
-blueprint to implement a multi commands in python. This command can be install
-on remote system or CI with pip
-
-* execute operation in CI
-* execute command for user
-* install a new command on OS
-* ...
-
-The implementation is compatible with python2.7 and python3.6
+* [ariadne](https://ariadnegraphql.org/)
 
 ## Getting started
 
-1. clone this repository
+### 1. Usage : use internal webserver of ariadne
 
-2. remove .git directory
+1.1) load the virtual environment
 
-3. use your library identifier as module name
+```bash
+make install_requirement
+make activate
+```
 
-    * replace `mycommand`, `mycommand_tests` by your own identifier
-    * you have to change as well inside `Makefile`, `.coveragerc`, `tox.ini` and `setup.py`
+1.2) run the webserver
+
+```bash
+python -m ariadne_spike.cli webapp
+```
+
+
+
+### 4. Testability: check the validity of graphql schema
+
+* `gql` instruction allow to check the validity of graphql schema (see [test_query.py](ariadne_spike_tests/acceptances/test_query.py))
+
+
 
 ## The latest version
 
