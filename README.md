@@ -66,6 +66,11 @@ localhost:8000
     
 ### 5. Performance : Scalability
 
+The overhead of the framework is low. A container M on Scalingo handles more 2000 Requests 
+per minutes with a response time below 50ms.
+
+![](docs/performance_2000RPM_container_M_scalingo.png)
+
 ### 6. Subscription
 
 As Ariande come with support of ASGI webserver instead of just WSGI, subscription are supported.
