@@ -66,17 +66,20 @@ localhost:8000
 
 ### 6. Subscription
 
-Subscription are supported.
+As Ariande come with support of ASGI webserver instead of just WSGI, subscription are supported.
 
-I am not confident with the [example given in the documentation](https://ariadnegraphql.org/docs/0.4.0/subscriptions). It suppose the user
-has session stickiness on the server.
+I am not confident with the [example given in the documentation](https://ariadnegraphql.org/docs/0.4.0/subscriptions). 
+From my point of view, I think it suppose the user should have session stickiness on the server if there is more than
+one node.
+
+I didn't implement a test case yet.
 
 ## The latest version
 
 You can find the latest version to ...
 
 ```bash
-git clone https://github.com/FabienArcellier/blueprint-cli-multicommands-python.git
+git clone https://github.com/FabienArcellier/spike-ariadne.git
 ```
 
 ## Usage
