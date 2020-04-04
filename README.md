@@ -4,6 +4,15 @@
 
 * [ariadne](https://ariadnegraphql.org/)
 
+**Conclusion : I keep Ariadne in short list of graphql engine**
+
+* testability patterns are ok
+* development is straight forward
+    
+    * documentation is little obscure due to lack of sample on how the resolvers are link together
+
+* scalability is fine
+
 ## Getting started
 
 ### 1. Usage : use internal webserver of ariadne
