@@ -41,7 +41,7 @@ localhost:8000
 
 * `gql` instruction allow to check the validity of graphql schema (see [test_query.py](ariadne_spike_tests/acceptances/test_query.py))
 
-### 4. Testability: ensure non regression through acceptance testing
+### 4. Testability: ensure non regression through acceptance testing
 
 * acceptance test can be running with ``graphql_sync``. This part is missing in official documentation, you have to take a look on [the repository](https://github.com/mirumee/ariadne/blob/master/tests/test_graphql.py)
 * acceptance test with mock ?
@@ -62,9 +62,9 @@ localhost:8000
     
     Solution 2 : use stateful module as ``resolver`` collection
     
-### 5. Performance : Scalability
+### 5. Performance : Scalability
 
-### 6. Subscription
+### 6. Subscription
 
 Subscription are supported.
 
