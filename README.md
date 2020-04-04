@@ -1,6 +1,6 @@
 ## implement a graphql service with ariadne
 
-[![Build Status](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python.svg?branch=master)](https://travis-ci.org/FabienArcellier/blueprint-cli-multicommands-python)
+![ci](https://github.com/FabienArcellier/spike-ariadne/workflows/ci/badge.svg)
 
 * [ariadne](https://ariadnegraphql.org/)
 
