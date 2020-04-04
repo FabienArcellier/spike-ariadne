@@ -21,13 +21,55 @@ make activate
 python -m ariadne_spike.cli webapp
 ```
 
+1.3) run the graphql query
 
+```bash
+curl 'http://127.0.0.1:8000/' -H 'content-type: application/json' --data-binary '{"query":"{\n  user(name: \"fabien\") {name,age}}"}'
+```
+
+1.4) use the Graphiql IHM
+
+```bash
+localhost:8000
+```
+
+### 3. Documentation: the documentation of api is available in UI
+
+* the documentation of the API is available in the UI
 
 ### 4. Testability: check the validity of graphql schema
 
 * `gql` instruction allow to check the validity of graphql schema (see [test_query.py](ariadne_spike_tests/acceptances/test_query.py))
 
+### 4. Testability: ensure non regression through acceptance testing
 
+* acceptance test can be running with ``graphql_sync``. This part is missing in official documentation, you have to take a look on [the repository](https://github.com/mirumee/ariadne/blob/master/tests/test_graphql.py)
+* acceptance test with mock ?
+
+    Solution 1 : define solver as class
+
+    The dependency injection may be solved with this pattern when necessary. It's useful to ensure
+    non regression API on the ``Mutation`` by injecting mock instead of real backend.
+    
+    ```python
+    class UserResolver:
+      def __call__(self, obj: Any, info: GraphQLResolveInfo, name=None, age=None):
+        return User(name, age)
+
+    user_resolver = UserResolver() # dependency injection go there
+    query.create_register_resolver('user')(user_resolver)
+    ```
+    
+    Solution 2 : use stateful module as ``resolver`` collection
+    
+### 5. Performance : Scalability
+
+### 6. Subscription
+
+Subscription are supported.
+
+I am not confident with the [example given in the documentation](https://ariadnegraphql.org/docs/0.4.0/subscriptions). It suppose the user
+has session stickiness on the server.
 
 ## The latest version
 
