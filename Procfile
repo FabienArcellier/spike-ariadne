@@ -1,1 +1,1 @@
-web: python -m ariadne_spike.cli webapp_wsgi
+web: /app/.scalingo/python/bin/pip install . && python -m ariadne_spike.cli webapp_wsgi
