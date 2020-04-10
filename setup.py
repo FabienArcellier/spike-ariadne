@@ -19,6 +19,7 @@ setup(
         'ariadne',
         'click',
         'decorator',
+        'flask',
         'uvicorn'
     ],
     extras_require={

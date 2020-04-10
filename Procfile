@@ -1,1 +1,1 @@
-web: python -m ariadne_spike.cli webapp
+web: python -m ariadne_spike.cli webapp_wsgi

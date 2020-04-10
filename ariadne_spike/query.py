@@ -15,7 +15,7 @@ def type_def() -> str:
         type Query {
             user(name: String, age: Int): User
         }
-        
+
         type User {
             name: String
             age: Int

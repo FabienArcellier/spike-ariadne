@@ -8,7 +8,7 @@
 
 * testability patterns are ok
 * development is straight forward
-    
+
     * documentation is little obscure due to lack of sample on how the resolvers are link together
 
 * scalability is fine
@@ -27,9 +27,9 @@ make activate
 1.2) run the webserver
 
 ```bash
-python -m ariadne_spike.cli webapp
+python -m ariadne_spike.cli webapp_asgi
 # or
-ariadne_spike webapp
+ariadne_spike webapp_asgi
 ```
 
 1.3) run the graphql query
@@ -43,6 +43,10 @@ curl 'http://127.0.0.1:8000/' -H 'content-type: application/json' --data-binary 
 ```bash
 localhost:8000
 ```
+
+### 2. Development
+
+I can generate interface client with graphql endpoint.
 
 ### 3. Documentation: the documentation of api is available in UI
 
@@ -61,7 +65,7 @@ localhost:8000
 
     The dependency injection may be solved with this pattern when necessary. It's useful to ensure
     non regression API on the ``Mutation`` by injecting mock instead of real backend.
-    
+
     ```python
     class UserResolver:
       def __call__(self, obj: Any, info: GraphQLResolveInfo, name=None, age=None):
@@ -70,12 +74,12 @@ localhost:8000
     user_resolver = UserResolver() # dependency injection go there
     query.create_register_resolver('user')(user_resolver)
     ```
-    
+
     Solution 2 : use stateful module as ``resolver`` collection
-    
+
 ### 5. Performance : Scalability
 
-The overhead of the framework is low. A container M on Scalingo handles more 2000 Requests 
+The overhead of the framework is low. A container M on Scalingo handles more 2000 Requests
 per minutes with a response time below 50ms.
 
 ![](docs/performance_2000RPM_container_M_scalingo.png)
@@ -84,7 +88,7 @@ per minutes with a response time below 50ms.
 
 As Ariande come with support of ASGI webserver instead of just WSGI, subscription are supported.
 
-I am not confident with the [example given in the documentation](https://ariadnegraphql.org/docs/0.4.0/subscriptions). 
+I am not confident with the [example given in the documentation](https://ariadnegraphql.org/docs/0.4.0/subscriptions).
 From my point of view, I think it suppose the user should have session stickiness on the server if there is more than
 one node.
 
@@ -96,17 +100,6 @@ You can find the latest version to ...
 
 ```bash
 git clone https://github.com/FabienArcellier/spike-ariadne.git
-```
-
-## Usage
-
-You can run the application with the following command
-
-```bash
-python -m mycommand.cli command1 --name fabien
-
-# inside a virtualenv or after installation with pip
-mycommand command1 --name fabien
 ```
 
 ## Developper guideline

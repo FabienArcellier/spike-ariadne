@@ -3,6 +3,7 @@ __pycache__
 **/*.pyc
 /.coverage
 /.idea
+/.vscode
 /dist
 /htmlcov
 venv
